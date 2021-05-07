@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Siemens.API.Service</name>
+    </assembly>
+    <members>
+        <member name="M:Siemens.API.Service.Controllers.CalculateController.GetCost(System.Int32,System.Double,System.String)">
+            <summary>
+            Gets the cost of Gold based on the selected quantity
+            </summary>
+            <param name="customerId"> unique customer Id (1 or 2)</param>
+            <param name="grams">total grams (any int or double)</param>
+            <param name="viewMode">to be viewed on (options: Paper or Screen or File</param>
+            <returns>cost Dto that contains the cost info and the customer privilege</returns>
+        </member>
+    </members>
+</doc>

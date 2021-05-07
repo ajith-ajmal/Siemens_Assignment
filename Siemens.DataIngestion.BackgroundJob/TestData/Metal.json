@@ -1,0 +1,10 @@
+﻿[
+
+  {
+    "Id": 1,
+    "Item": "Gold",
+    "DiscountPercent": 2,
+    "CostPerGram": 5000
+  }
+
+]

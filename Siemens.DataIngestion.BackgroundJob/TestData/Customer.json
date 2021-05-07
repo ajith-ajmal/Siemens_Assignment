@@ -1,0 +1,14 @@
+﻿[
+
+  {
+    "CustomerId": 1,
+    "Type": "Special",
+    "IsDiscountable": true
+  },
+  {
+    "CustomerId": 2,
+    "Type": "Normal",
+    "IsDiscountable": false
+  }
+
+]
