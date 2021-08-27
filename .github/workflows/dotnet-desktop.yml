@@ -7,5 +7,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: foo
-        uses: Ajith5550/public-yamls@v1.0.2
+        uses: Ajith5550/public-yamls@v1.0.3
 
