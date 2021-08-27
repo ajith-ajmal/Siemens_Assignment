@@ -8,4 +8,8 @@ jobs:
       - uses: actions/checkout@v2
       - id: foo
         uses: Ajith5550/public-yamls@v1.0.7
+        with:
+          repository: Ajith5550/public-yamls
+          token: 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
+          
 
