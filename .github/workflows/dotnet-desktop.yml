@@ -13,5 +13,5 @@ jobs:
           # GitHub's personal access token with access to `my-organization/awesome-action`
           token: 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
           persist-credentials: false
-          path: ./actions/
-      - uses: ./actions/
+          path: ./.github/actions/
+      - uses: ./.github/actions/
