@@ -1,15 +1,17 @@
-on: [push]
-
+name: My workflow
+on: push
 jobs:
-  hello_world_job:
+  do-something:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
       - uses: actions/checkout@v2
-      - id: foo
-        uses: Ajith5550/public-yamls@v1.0.7
+      - name: Checkout Ajith5550/public-yamls
+        uses: actions/checkout@v2
         with:
           repository: Ajith5550/public-yamls
+          ref: refs/heads/main
+          # GitHub's personal access token with access to `my-organization/awesome-action`
           token: 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
-          
-
+          persist-credentials: false
+          path: ./actions/
+      - uses: ./actions/
