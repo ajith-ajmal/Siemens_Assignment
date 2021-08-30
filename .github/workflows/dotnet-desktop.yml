@@ -5,11 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Checkout Ajith5550/public-yamls
-        uses: actions/checkout@v2
-        with:
-          repository: Ajith5550/public-yamls
-          ref: main
-          token: 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
-          path: Ajith5550/public-yamls/.github/actions/action.yaml
+      - uses: ./.github/workflows/
+      
       
