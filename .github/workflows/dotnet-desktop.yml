@@ -6,5 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./actions/
+      - name: powershell
+        run: |
+           get-childitem
+        shell: pwsh
       
       
