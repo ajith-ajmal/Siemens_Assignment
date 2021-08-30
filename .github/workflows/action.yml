@@ -1,0 +1,8 @@
+name: 'Hello World'
+description: 'Greet someone'
+runs:
+  using: "composite"
+  steps:
+  - uses: actions/checkout@v2
+  - name: Setup .NET
+    uses: actions/setup-dotnet@v1
