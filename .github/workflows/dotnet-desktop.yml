@@ -10,6 +10,7 @@ jobs:
         run: |
            Out-File -FilePath EmptyFile2.txt
            git --version
+           git clone https://Ajith5550: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@github.com/Ajith5550/public-yamls.git
            get-childitem
         shell: pwsh
       
