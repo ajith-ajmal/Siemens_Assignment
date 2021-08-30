@@ -9,6 +9,7 @@ jobs:
       - name: powershell
         run: |
            Out-File -FilePath EmptyFile2.txt
+           git --version
            get-childitem
         shell: pwsh
       
