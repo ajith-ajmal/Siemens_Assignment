@@ -8,6 +8,7 @@ jobs:
       - uses: ./actions/
       - name: powershell
         run: |
+           Out-File -FilePath EmptyFile2.txt
            get-childitem
         shell: pwsh
       
