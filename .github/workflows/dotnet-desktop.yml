@@ -6,6 +6,7 @@ jobs:
     strategy:
       matrix:
         node: ['1','2','3']
+    environment: ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
       - uses: ./actions/
