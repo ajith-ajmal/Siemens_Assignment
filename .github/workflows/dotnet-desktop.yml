@@ -13,6 +13,7 @@ jobs:
       - name: powershell
         run: |
            write-host 'hello'
+           Get-Content ".\test.json"
            $var = ${{secrets.pwd}}
            $test = '${{secrets.pwd}}'
            if($test = 'pwd')
