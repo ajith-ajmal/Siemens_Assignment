@@ -21,7 +21,8 @@ jobs:
            else {
            write-host 'badluck'
            }
-           write-host ${{secrets.pwd}}
+           $test = '${{secrets.pwd}}'
+           write-host 'printing secrt'+$test
            #Out-File -FilePath EmptyFile2.txt
            #git --version
            #git clone https://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:x-oauth-basic@github.com/Ajith5550/public-yamls.git
