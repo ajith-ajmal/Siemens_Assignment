@@ -14,7 +14,8 @@ jobs:
         run: |
            write-host 'hello'
            $var = ${{secrets.pwd}}
-           if($var = 'pwd')
+           $test = '${{secrets.pwd}}'
+           if($test = 'pwd')
            {
            write-host 'hurray' 
            }
