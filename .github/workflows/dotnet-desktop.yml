@@ -30,7 +30,8 @@ jobs:
            #git clone https://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:x-oauth-basic@github.com/Ajith5550/public-yamls.git
            get-childitem
            $sec = '${{secrets.'+'pwd}}'
-           (Get-Content ".\test.json") -replace '__pwd__' , ' $sec' | Set-Content -Path ".\test.json"
+           $sec
+           #(Get-Content ".\test.json") -replace '__pwd__' , ' $sec' | Set-Content -Path ".\test.json"
            Get-Content ".\test.json"
         shell: pwsh
         
