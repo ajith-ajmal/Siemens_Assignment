@@ -13,6 +13,14 @@ jobs:
       - name: powershell
         run: |
            write-host 'hello'
+           $var = ${{secrets.pwd}}
+           if($var == 'pwd')
+           {
+           write-host 'hurray' 
+           }
+           else {
+           write-host 'badluck'
+           }
            write-host ${{secrets.pwd}}
            #Out-File -FilePath EmptyFile2.txt
            #git --version
