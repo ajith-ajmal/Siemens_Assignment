@@ -2,10 +2,11 @@ name: My workflow
 on: push
 jobs:
   do-something:
-    runs-on: ubuntu-latest
+    
     strategy:
       matrix:
         node: ['dev','test','ppd']
+    runs-on: ubuntu-latest
     environment: ${{matrix.node}}
     steps:
       - uses: actions/checkout@v2
