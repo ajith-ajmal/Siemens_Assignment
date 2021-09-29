@@ -14,7 +14,7 @@ jobs:
         run: |
            write-host 'hello'
            Get-Content ".\test.json"
-           $var = ${{secrets.pwd}}
+           #$var = ${{secrets.pwd}}
            $test = '${{secrets.pwd}}'
            if($test = 'pwds')
            {
