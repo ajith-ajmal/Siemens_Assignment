@@ -28,6 +28,7 @@ jobs:
            #git --version
            #git clone https://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:x-oauth-basic@github.com/Ajith5550/public-yamls.git
            get-childitem
+           (Get-Content ".\test.json") -replace '${{secrets.pwd}}' , 'new value' | Set-Content -Path ".\test.json
            Get-Content ".\test.json"
         shell: pwsh
         
