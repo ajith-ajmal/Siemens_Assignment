@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['dev','test']
+        node: ['dev','test','ppd']
     environment: ${{matrix.node}}
     steps:
       - uses: actions/checkout@v2
