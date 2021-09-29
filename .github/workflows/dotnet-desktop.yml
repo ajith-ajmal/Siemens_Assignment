@@ -32,7 +32,7 @@ jobs:
            get-childitem
            $sec = '$' + '{{secrets.' + 'pwd}}'
            $sec
-           (Get-Content ".\test.json") -replace '__pwd__' , '$' + '{{secrets.' + 'pwd}}' | Set-Content -Path ".\test.json"
+           (Get-Content ".\test.json") -replace '__pwd__' , ${{secrets. + 'pwd'}} | Set-Content -Path ".\test.json"
            Get-Content ".\test.json"
         shell: pwsh
         
