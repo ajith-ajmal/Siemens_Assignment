@@ -1,5 +1,14 @@
-name: My workflow
-on: push
+
+on: 
+  push:
+    branches:
+      - loop-add-bicep-infrastructure
+  workflow_dispatch:
+    inputs:
+      devlogLevel:
+        description: 'Log level'     
+        required: true
+        default: 'information'
 jobs:
   do-something:
     
@@ -14,26 +23,27 @@ jobs:
       - name: powershell
         run: |
            write-host 'hello'
-           Get-Content ".\test.json"
+           write-host ${{inputs.devlogLevel}}
+           #Get-Content ".\test.json"
 
-           $test = '${{secrets.pwd}}'
-           if($test = 'pwds')
-           {
-           write-host 'hurray' 
-           }
-           else {
-           write-host 'badluck'
-           }
-           $test = '${{secrets.pwd}}'
-           write-host 'printing secrt'+$test
+           #$test = '${{secrets.pwd}}'
+           #if($test = 'pwds')
+           #{
+           #write-host 'hurray' 
+           #}
+           ##else {
+           #write-host 'badluck'
+           #}
+           #$test = '${{secrets.pwd}}'
+           #write-host 'printing secrt'+$test
            #Out-File -FilePath EmptyFile2.txt
            #git --version
            #git clone https://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:x-oauth-basic@github.com/Ajith5550/public-yamls.git
-           get-childitem
-           $sec = '$' + '{{secrets.' + 'pwd}}'
-           $sec
-           (Get-Content ".\test.json") -replace '__pwd__' , ${{secrets. + 'pwd'}} | Set-Content -Path ".\test.json"
-           Get-Content ".\test.json"
+           #get-childitem
+           #$sec = '$' + '{{secrets.' + 'pwd}}'
+           #$sec
+           #(Get-Content ".\test.json") -replace '__pwd__' , ${{secrets. + 'pwd'}} | Set-Content -Path ".\test.json"
+           #Get-Content ".\test.json"
         shell: pwsh
         
       
