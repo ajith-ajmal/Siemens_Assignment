@@ -14,12 +14,12 @@ jobs:
     strategy:
       matrix:
         node: ['dev','test']
-        python: ['']
-        include:
+        python: [2.7, 3.6]
+        exclude:
           - node: 'dev'
-            python: 2.7
-          - node: 'test'
             python: 3.6
+          - node: 'test'
+            python: 2.7
 
     runs-on: ubuntu-latest
     environment: ${{matrix.node}}
