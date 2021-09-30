@@ -15,11 +15,12 @@ jobs:
       matrix:
         node: ['dev','test']
         python: [2.7, 3.6]
-        experimental: [false]
-        include:
-          - node: 'ppd'
-            python: 3.8
-            experimental: true
+        exclude:
+          - node: 'dev'
+            python: 3.6
+          - node: 'test'
+            python: 2.7
+
     runs-on: ubuntu-latest
     environment: ${{matrix.node}}
     steps:
@@ -28,7 +29,6 @@ jobs:
       - name: powershell
         run: |
            write-host ${{matrix.python}}
-           write-host ${{matrix.experimental}}
            write-host ${{matrix.node}}
         shell: pwsh
         
