@@ -1,4 +1,4 @@
-
+o
 on: 
   push:
     branches:
@@ -23,7 +23,7 @@ jobs:
       - name: powershell
         run: |
            write-host ${{matrix.node}}
-           write-host ${{inputs.logLeveldev}}
+          echo ${{inputs.logLeveldev}}
            
         shell: pwsh
         
