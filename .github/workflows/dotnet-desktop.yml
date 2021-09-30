@@ -10,20 +10,23 @@ on:
         required: true
         default: 'information'
 jobs:
-  do-something:
-    
+  build:
     strategy:
       matrix:
-        node: ['dev']
+        python: [2.7, 3.6]
+        experimental: [false]
+        include:
+          - python: 3.8
+            experimental: true
     runs-on: ubuntu-latest
-    environment: ${{matrix.node}}
+    environment: dev
     steps:
       - uses: actions/checkout@v2
       - uses: ./actions/
       - name: powershell
         run: |
-           write-host ${{matrix.node}}
-           echo ${{inputs.logLeveldev}}
+           write-host ${{matrix.python}}
+           write-host ${{matrix.experimental}}
            
         shell: pwsh
         
