@@ -23,7 +23,7 @@ jobs:
       - name: powershell
         run: |
            write-host 'hello'
-           write-host '${{inputs.devlogLevel}}'
+           write-host ${{inputs.devlogLevel}}
         shell: pwsh
         
       
