@@ -2,7 +2,7 @@
 on: 
   push:
     branches:
-      - loop-add-bicep-infrastructure
+      - master
   workflow_dispatch:
     inputs:
       devlogLevel:
