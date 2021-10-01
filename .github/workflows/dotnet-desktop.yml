@@ -26,7 +26,7 @@ jobs:
       - uses: ./actions/
       - name: powershell
         run: |
-           write-host ${{steps.SetVariables.vars.branch}}
+           write-host ${{steps.vars.outputs.branch}}
            write-host ${{inputs.devlogLevel}}
         shell: pwsh
         
