@@ -21,7 +21,7 @@ jobs:
       - name: outputvars
         id: vars
         run: |
-           $data = (Get-Content ".\test.json") | ConvertFrom-Json
+           $data = (Get-Content "test.json") | ConvertFrom-Json
            write-host $data.secret
            echo "::set-output name=branch::testvalue"
         shell: pwsh
