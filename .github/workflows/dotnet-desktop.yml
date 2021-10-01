@@ -18,11 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{matrix.node}}
     steps:
+      - name: outputvars
+        id: vars
+        run: |
+           echo "::set-output name=branch::testvalue"
       - uses: actions/checkout@v2
       - uses: ./actions/
       - name: powershell
         run: |
-           write-host 'hello'
+           write-host ${{steps.SetVariables.vars.branch}}
            write-host ${{inputs.devlogLevel}}
         shell: pwsh
         
