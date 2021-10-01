@@ -26,7 +26,7 @@ jobs:
 
            $data = (Get-Content ${{matrix.node}}.json) | ConvertFrom-Json
            write-host $data.secret
-           echo "::set-output name=branch::testvalue"
+           echo "::set-output name=branch::$data.secret"
         shell: pwsh
 
       - name: powershell2
