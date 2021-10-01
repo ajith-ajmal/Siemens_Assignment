@@ -21,6 +21,8 @@ jobs:
       - name: outputvars
         id: vars
         run: |
+           $data = "test.json" | ConvertFrom-Json
+           write-host $data.secret
            echo "::set-output name=branch::testvalue"
       - uses: actions/checkout@v2
       - uses: ./actions/
