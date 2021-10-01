@@ -21,7 +21,7 @@ jobs:
       - name: outputvars
         id: vars
         run: |
-           get-childitem
+
            #$data = (Get-Content "test.json") | ConvertFrom-Json
            write-host $data.secret
            echo "::set-output name=branch::testvalue"
@@ -30,6 +30,7 @@ jobs:
       - uses: ./actions/
       - name: powershell
         run: |
+           get-childitem
            write-host ${{steps.vars.outputs.branch}}
            write-host ${{inputs.devlogLevel}}
         shell: pwsh
