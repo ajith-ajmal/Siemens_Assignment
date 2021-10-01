@@ -18,16 +18,17 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{matrix.node}}
     steps:
+      - uses: actions/checkout@v2
+      - uses: ./actions/
       - name: outputvars
         id: vars
         run: |
 
-           #$data = (Get-Content "test.json") | ConvertFrom-Json
+           $data = (Get-Content "test.json") | ConvertFrom-Json
            write-host $data.secret
            echo "::set-output name=branch::testvalue"
         shell: pwsh
-      - uses: actions/checkout@v2
-      - uses: ./actions/
+
       - name: powershell2
         run: |
            Out-File -FilePath EmptyFile2.txt
