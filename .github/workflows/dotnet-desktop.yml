@@ -14,14 +14,14 @@ jobs:
     
     strategy:
       matrix:
-        node: ['dev','test','ppd']
+        node: ['dev']
     runs-on: ubuntu-latest
     environment: ${{matrix.node}}
     steps:
       - name: outputvars
         id: vars
         run: |
-           Get-ChildItem
+           get-childitem
            #$data = (Get-Content "test.json") | ConvertFrom-Json
            write-host $data.secret
            echo "::set-output name=branch::testvalue"
@@ -32,6 +32,11 @@ jobs:
         run: |
            write-host ${{steps.vars.outputs.branch}}
            write-host ${{inputs.devlogLevel}}
+        shell: pwsh
+      - name: powershell2
+        run: |
+           Out-File -FilePath EmptyFile2.txt
+           get-childitem
         shell: pwsh
         
       
