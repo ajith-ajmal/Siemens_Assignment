@@ -5,16 +5,16 @@ on:
       - master
   workflow_dispatch:
     inputs:
-      devlogLevel:
+      envs:
         description: 'Log level'     
         required: true
-        default: 'information'
+        default: 'test'
 jobs:
   do-something:
     
     strategy:
       matrix:
-        node: ['test']
+        node: ${{inputs.envs}}
     runs-on: ubuntu-latest
     environment: ${{matrix.node}}
     steps:
